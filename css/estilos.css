@@ -1,0 +1,552 @@
+/* Importamos nuestra hoja de etilos de normalize */
+ @import url('normalize.css'); 
+ 
+:root{
+     --blanco:#FFFFFF;
+     --negro:#000000;
+     --rosa:#ED088C;
+     --gris:#333333;
+     --claro:#E9E9E9;
+     --rosaClaro:#f1d1c1;
+}
+
+ html {
+     box-sizing: border-box;
+     font-size: 62.5%; /** Reset para REMS - 62.5% = 10px de 16px **/
+ }
+ *, *:before, *:after {
+     box-sizing: inherit;
+ }
+
+ body {
+     font-family: 'Noto Sans', sans-serif;
+     font-size: 1.6rem;
+     line-height: 2;
+ }
+ 
+ /** Globales **/
+ img {
+     max-width: 100%;
+ }
+
+ .contenedor {
+     width: 90%;
+     margin: 0 auto;  
+ }
+
+ a {
+     text-decoration: none; 
+ }
+ h1 {
+     font-size: 3.8rem;
+ }
+ h2 {
+     font-size: 3.4rem;
+ }
+ h3 {
+     font-size: 3rem;
+ }
+ h4 {
+     font-size: 2.6rem;
+ }
+ .btn {
+     background-color: #f1d1c1;
+     color: var(--gris);
+     font-size: 1.25em;
+     padding: 1rem 2rem;
+     border-radius: 1rem;
+     outline: none;
+     transition: all 0.3s;
+ }
+ .btn:active {
+     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
+ }
+.titulo{
+     text-align: center;
+     color: var(--rosa);
+}
+
+ /* Header */
+header {
+     height: 19rem;
+     background-color: #11122b;
+     color: #cbcbcb;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 6rem 10rem;
+}
+
+/* Página Inicio*/
+/* Columna izquierda */
+.left-column {
+     display: flex;
+}
+.left-column> .icon {
+     margin-right: 1.5rem;
+}
+.left-column > .icon i {
+     font-size: 2rem;
+}
+
+/* Columna centro*/
+.center-column{
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-gap: 3rem;
+     width: 50rem;
+}
+.center-column >.logo{
+     display: flex;
+     justify-content: center;
+}
+
+/* Imagen logo */
+.logo img{
+     width: 22rem;
+     height: 100%;
+}
+
+/* Navegacióm*/
+.navegacion {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+.nav-link{
+     width: 7rem;
+    text-align: center;
+}
+.nav-link a {
+     color: #CBCBCB;
+     transition: 0.5s;
+}
+.nav-link a:hover {
+     color: var(--rosa);
+     letter-spacing: 2px;
+}
+
+/* Columna derecha */
+.right-column{
+     display: flex;
+     align-items: center;
+}
+.direccion {
+     text-align: right;
+}
+.direccion a{
+     color: #858585;
+     text-decoration: none;
+     font-size: 0.9em;
+     transition: 0.5s; 
+}
+.direccion a:hover{
+     color: var(--rosa);
+}
+.icono-contacto {
+     margin-left: 1.5rem;
+     font-size: 2em;
+}
+.icono-contacto a {
+     color: #cbcbcb;
+     transition: 0.5s;
+}
+.icono-contacto a:hover{
+     color: var(--rosa);
+}
+
+/* Seccion hero*/
+.hero-section {
+     background-image: url(../img/hero.jpg);
+     padding: 10rem;
+     height: 40rem;
+     background-attachment: fixed;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     text-align: center;
+}
+
+.contenido-hero{
+     width: 50%;
+     margin: 0 auto;
+     background-color: rgba(0, 0, 0, 0.4);
+     color: var(--claro);
+}
+
+.hero-section span{
+     color: var(--rosa);
+     text-transform: uppercase;
+
+}
+
+/* Sección del main */
+.main-page{
+     display: grid;
+     width: 100%;
+     grid-template-columns: 3fr 1fr;
+     grid-template-rows: repeat(3, auto);
+     grid-template-areas:
+    "main-product aside"
+    "galeria  aside"
+    "article  aside";
+}
+
+.main-product{
+     grid-area: main-product;
+     width: 100%;
+     height: 40rem;
+     display: flex;
+}
+
+.text-product{
+     width: 70%;
+     padding: 1.5rem;
+}
+.text-product h2{
+     text-align: center;
+     text-decoration: underline;
+}
+ .btn-informacion{
+     width: 100%;
+     text-align: center;
+     margin-top: 5rem;
+ }
+ .btn-color-rosa{
+     background-color: var(--rosa);
+     color: var(--blanco);
+ }
+ .product-giordani{
+     width: 30%;
+     margin: 5rem;
+     height: 30rem;
+     justify-content: center;
+}
+
+.product-giordani img{
+     height: 100%;
+}
+
+/* Galeria */
+.galeria{
+     grid-area: galeria;
+     height: 40rem;  
+}
+
+.galeria-fragancias{
+     display: flex;
+     justify-content:space-around;
+     gap: 2rem;
+     height: 30rem;
+}
+.fragancias{
+     width: 18%;
+     height: 90%;
+}
+.fragancias img{
+     width: 90%;
+     height: 100%;
+     border-radius: 2rem;
+}
+
+/* Seccion de un artículo sobre un video */
+.article{
+     grid-area: article;
+     height: 50rem;
+     text-align: center;
+}
+
+/* Sección de aside */
+aside{
+     grid-area: aside;
+     border-left: 0.4rem solid var(--rosa);
+     padding: 1rem;
+     text-align: center;
+}
+.product-destacado{
+     display: flex;
+     text-align: center;
+     color: var(--gris);
+
+}
+.product-destacados h4{
+     text-transform: uppercase;
+     text-decoration: underline;
+     font-size: 2rem;
+}
+.img-destacada{
+     width: 60%;
+     height: 20rem;
+}
+.img-destacada img{
+     height: 80%;
+     border-radius: 1rem;
+     border: 1rem solid var(--rosa);
+}
+.texto-destacado{
+     width: 40%;
+     font-size: 1.2rem;
+}
+.btn-aside{
+     margin-top: 4rem;
+}
+
+/* Footer */
+footer {
+     background-color: #11122b;
+     color: #cbcbcb;
+     font-family: "Ubuntu Condensed", sans-serif;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     height: 40rem;
+}
+.logo-footer{
+     margin-top: 2rem;
+}
+.logo-footer img {
+     width: 18rem;
+     height: 100%;
+     opacity: 0.5;
+}
+.footer-phone span{
+     display: inline-block;
+     margin-top: 1rem;
+     color: var(--rosa);
+}
+footer > .navegacion {
+     margin-top: 3rem;
+     margin-bottom: 2rem;
+     width: 400px;
+}
+
+.social-media-icons {
+     margin-top: 3rem;
+     margin-bottom: 3rem;
+     width: 300px;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+}
+
+.social-media-icons a {
+     font-size: 1.5em;
+     color: #cbcbcb;
+     transition: 0.5s;
+}
+.social-media-icons a:hover {
+     color: var(--rosa);
+}
+.copyright {
+     margin-bottom: 3rem;
+     font-size: 0.7em;
+     color: #858585;
+}
+
+/* Páginas Nosotros */
+/* Navegacion*/
+.site-header {
+     height: 10rem;
+}
+.site-header > .logo{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.site-header > .logo img{
+     height: 8rem;
+}
+.site-header > .navegacion > .nav-link{
+     width: 9rem;
+}
+
+/* Contenido de la página nosotros */
+.content-nosotros{
+     display: flex;
+}
+
+.img-nosotros{
+     width: 40%;
+}
+.img-nosotros img{
+     height: 35rem;
+}
+.text-nosotros{
+     width: 50%;
+     margin-left: 2rem;
+     padding-left: 2rem;
+}
+.text-nosotros span{
+     font-style: italic;
+     font-weight: bold;
+}
+
+/* Seccion Mas sobre nosotros */
+.icon-nosotros{
+     width: 100%;
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+
+}
+.icon-nosotros > .icono{
+     width: 25%;
+     text-align: center;
+}
+.icon-nosotros > .icono h5{
+     font-size: 2rem;
+     text-transform: uppercase;
+}
+
+.icon-nosotros > .icono i{
+     font-size: 10rem;
+     color: #ED088C;
+}
+
+
+/* Estilos Página Catálago */
+.tipos-fragancias{
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 5rem;
+ }
+ .tipo-fragancia{
+     width: 20%;
+     height: 50rem;
+     position: relative;
+ }
+
+ .tipo-fragancia a{
+     background-color: rgba(0, 0, 0, 0.5);
+     color: var(--blanco);
+     font-size: 3rem;
+     font-weight: 900;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+ .tipo-fragancia a:hover{
+     color: var(--rosa)
+ }
+
+ .tipo-fragancia img{
+     width: 100%;
+     height: 100%;
+     border-radius: 3rem;
+ }
+
+ /* Estilos para las paginas de las Fragancias */
+ .fragancias{
+     width: 100%;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-wrap: wrap;
+     gap:2rem;
+     margin-bottom: 3rem;
+ }
+ .fragancia{
+     width: 40%;
+     border: 3px solid #11122b;
+     border-radius: 3rem;
+     padding: 3rem;
+     text-align: center;
+     margin-bottom: 2rem;
+ }
+ .fragancia img{
+     width: 80%;
+     height: 25rem;
+ }
+ .contenido-fragancia h3{
+     background-color: #ED088C; 
+     color: var(--blanco) 
+ }
+ .precio{
+     color: yellowgreen;
+     font-weight: 700;
+     font-size: 2rem;
+ }
+ .btn-color-gris{
+     background-color:#11122b;
+     color: var(--blanco);
+ }
+
+/* Noticias */
+.noticias{
+     border-top: 0.5rem solid var(--rosa);
+ }
+ .noticias > .main-product{
+     border-bottom: 2px solid var(--rosa);
+ }
+ 
+ .noticia1{
+     width: 80%;
+ }
+
+/* Contacto */
+.main-contact{
+     margin-bottom: 3rem;
+}
+.contacto p {
+     font-size: 1.4rem;
+     color: var(--negro);
+     margin: 2rem 0 0 0;
+ }
+ fieldset{
+     color: #ED088C;
+     border: #11122b 1px solid;
+ }
+ legend {
+     font-size: 2rem;
+     color: var(--rosa);
+ }
+ label {
+     font-weight: 700;
+     text-transform: uppercase;
+     display: block;
+ }
+
+ input:not([type="submit"]),
+ textarea,
+ select {
+     padding: 1rem;
+     display: block;
+     width: 100%;
+     background-color: var(--rosaClaro);
+     margin-bottom: 2rem;
+     border: none;
+     border-radius: 1rem;
+ }
+ input[type="radio"]{
+     width: auto;
+     margin: 0;
+ }
+ select {
+     -webkit-appearance: none;
+     appearance: none;
+ }
+ textarea {
+     height: 20rem;
+ }
+ .forma-contacto {
+     max-width:30rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ .btn-contacto{
+     margin-top: 4rem;
+     width: 4rem;
+     padding: 1.5rem 6rem;
+     background-color: var(--rosa);
+     border: none;
+     border-radius: 0.5rem;
+     display: flex;
+     justify-content: center;
+     color: var(--blanco);
+ }
+ 
+
+ 
